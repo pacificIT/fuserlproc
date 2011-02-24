@@ -1,0 +1,12 @@
+{ application, fuserlproc,
+  [ 
+    { description, "Proc filesystem for Erlang." }, 
+    { vsn, "0.4.1" },
+    { modules, [ fuserlproc, fuserlprocsrv, fuserlprocsup ] },
+    { registered, [  ] },
+    { applications, [ kernel, stdlib  , fuserl ] },
+    { mod, { fuserlproc, [] } },
+    { env, [ { linked_in, false }, { make_mount_point, true }, { mount_point, "/erlproc" }, { mount_opts, "allow_other,default_permissions" }] }
+    
+  ] 
+}.
